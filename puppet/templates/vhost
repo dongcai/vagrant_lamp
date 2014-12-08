@@ -1,21 +1,24 @@
+#use the following is template to create as many as you want :-)
 <VirtualHost *:80>
-        ServerAdmin dong.cai@icfi.com
+	#update to your email
+    ServerAdmin adam@deniapps.com
+	#this folder mapped to your Windows project folder 
+    DocumentRoot /vagrant/test
+	#this is domain name you fake in your Windows host file
+    ServerName test.dev
+    <Directory />
+            Options FollowSymLinks
+            AllowOverride None
+    </Directory>
+	#this directory should match the the DocumentRoot above
+    <Directory /vagrant/test/>
+            Options Indexes FollowSymLinks MultiViews
+            AllowOverride All
+            Order allow,deny
+            allow from all
+    </Directory>
 
-        DocumentRoot /vagrant/test
-        ServerName test.dev
-        <Directory />
-                Options FollowSymLinks
-                AllowOverride None
-        </Directory>
-
-        <Directory /vagrant/test>
-                Options Indexes FollowSymLinks MultiViews
-                AllowOverride All
-                Order allow,deny
-                allow from all
-        </Directory>
-
-        ErrorLog /var/log/apache2/error.log
-        LogLevel warn
-        CustomLog /var/log/apache2/access.log combined
+    ErrorLog /var/log/apache2/error.log
+    LogLevel warn
+    CustomLog /var/log/apache2/access.log combined
 </VirtualHost>
