@@ -17,5 +17,5 @@ Use Vagrantfile API Version 2
 10. All set || Ask for help :-)
 	
 ## Authors
-[Unknown] (Let me know if you created this puppet)
-[Dong Cai](https://github.com/dongcai)
+* Unknown - Let me know if you originally created this puppet
+* [Dong Cai](https://github.com/dongcai)
